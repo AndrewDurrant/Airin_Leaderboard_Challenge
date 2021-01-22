@@ -3,10 +3,10 @@ import './App.css';
 
 function App() {
   const [state, setState] = useState({
-    data: null,
+    players: null,
   })
 
-  function fetchData() {
+  const getLeaderBoardData = () => {
     return fetch(`https://us-central1-airin-rec-sandbox.cloudfunctions.net/leaderboard/`, {
       method: 'GET',
       headers: {
@@ -17,10 +17,33 @@ function App() {
     );
   }
 
+  const getProfilePicture = (uid) => {
+    return fetch(`https://us-central1-airin-rec-sandbox.cloudfunctions.net/leaderboard/img/${uid}.png`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'image/png',
+      }
+    }).then((res) => 
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.url
+    )
+  }
+
+  // Get page data
+  const getPageData = async () => {
+    const players = await getLeaderBoardData();
+
+    const playerDetails = await Promise.all(players.map(async (el) => {
+      const profile = await getProfilePicture(el.uid)
+      return { ...el, url: profile}
+    }))
+    setState({ players: playerDetails })
+  }
+
   useEffect(() => {
-    fetchData().then((data) => console.log(data))
+    getPageData()
   }, [])
 
+  console.log(state.players);
   return (
     <div className="App">
       
