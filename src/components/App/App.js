@@ -1,39 +1,21 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import LeaderBoardApiService from '../../services/leader-board-api-service';
+import Nav from '../Nav/Nav';
+import Player from '../Player/Player';
 import './App.css';
 
 function App() {
   const [state, setState] = useState({
-    players: null,
+    players: [],
   })
 
-  const getLeaderBoardData = () => {
-    return fetch(`https://us-central1-airin-rec-sandbox.cloudfunctions.net/leaderboard/`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json'
-      }
-    }).then((res) => 
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-    );
-  }
-
-  const getProfilePicture = (uid) => {
-    return fetch(`https://us-central1-airin-rec-sandbox.cloudfunctions.net/leaderboard/img/${uid}.png`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'image/png',
-      }
-    }).then((res) => 
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.url
-    )
-  }
-
-  // Get page data
+  // Get page players data and profile picture
   const getPageData = async () => {
-    const players = await getLeaderBoardData();
+    const players = await LeaderBoardApiService.getLeaderBoardData();
 
     const playerDetails = await Promise.all(players.map(async (el) => {
-      const profile = await getProfilePicture(el.uid)
+      const profile = await LeaderBoardApiService.getProfilePicture(el.uid)
+      console.log('SDFDDD', el);
       return { ...el, url: profile}
     }))
     setState({ players: playerDetails })
@@ -45,9 +27,23 @@ function App() {
 
   console.log(state.players);
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <header>
+        <h1>Airin Leaderboard</h1>
+      </header>
+      <Nav />
+      <main>
+        <section className="leaderboard-container">
+          <ul className="player-list">
+            {state.players.map((p) => (
+              <li key={p.uid}>
+                <Player player={p} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </>
   );
 }
 
