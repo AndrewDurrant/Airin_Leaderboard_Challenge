@@ -6,12 +6,12 @@ import './App.css';
 function App() {
   const [state, setState] = useState({
     players: [],
-    view: 'score', // options: score, games_won, seconds_played
+    view: 'score', // options: score, games_won, seconds_played (stretch goal)
   })
   
+  // Sorts players for high score (could be used for other metrics as well)
   const handleSort = (players) => {
     return players.sort((a,b) => {
-      console.log(a[state.view], typeof a[state.view]);
       return b[state.view] - a[state.view]
     })
   }
@@ -31,25 +31,17 @@ function App() {
     getPageData()
   }, [])
 
-  // usePlayerSort(state.players, state.view);
-
-  // TODO: See if you can refactor the below code block into usePlayerSort
-
 
   return (
     <>
       <header className="lb-header">
-        <h1>airin.ai leaderboard</h1>
+        <h1>airin.ai ~ leaderboard</h1>
       </header>
       <main>
-        <section className="lb-container">
-          <ul className="player-list">
-            {state.players.map((p) => (
-              <li key={p.uid} className="player-wrapper">
-                <Player player={p} />
-              </li>
-            ))}
-          </ul>
+        <section className="player-list">
+          {state.players.map((p, i) => (
+            <Player key={p.uid} player={p} position={i + 1}/>
+          ))}
         </section>
       </main>
     </>
