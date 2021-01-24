@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
 import LeaderBoardApiService from '../../services/leader-board-api-service';
 import Player from '../Player/Player';
+import Loading from '../Loading/Loading';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import './App.css';
 
 function App() {
   const [state, setState] = useState({
     players: [],
-    view: 'score', // options: score, games_won, seconds_played (stretch goal)
+    view: 'score',
+    error: null,
+    isLoading: false,
   })
   
   // Sorts players for high score (could be used for other metrics as well)
@@ -18,13 +22,17 @@ function App() {
 
   // Get page players data and profile picture
   const getPageData = async () => {
-    const players = await LeaderBoardApiService.getLeaderBoardData();
-
-    const playerDetails = await Promise.all(players.map(async (el) => {
-      const profile = await LeaderBoardApiService.getProfilePicture(el.uid)
-      return { ...el, url: profile}
-    }))
-    setState({ players: handleSort(playerDetails) })
+    setState({ ...state, isLoading: true, error: null })
+    try {
+      const players = await LeaderBoardApiService.getLeaderBoardData();
+      const playerDetails = await Promise.all(players.map(async (el) => {
+        const profile = await LeaderBoardApiService.getProfilePicture(el.uid)
+        return { ...el, url: profile}
+      }))
+      setState({ ...state, players: handleSort(playerDetails), isLoading: false })
+    } catch (error) {
+      setState({ ...state, error: error, isLoading: false })
+    }
   }
 
   useEffect(() => {
@@ -39,6 +47,8 @@ function App() {
       </header>
       <main>
         <section className="player-list">
+          {state.isLoading && <Loading />}
+          {state.error && <ErrorMessage />}
           {state.players.map((p, i) => (
             <Player key={p.uid} player={p} position={i + 1}/>
           ))}
