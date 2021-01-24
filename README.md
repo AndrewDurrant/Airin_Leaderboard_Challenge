@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# airin.ai leaderboard challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Built by
+- Andrew Durrant
 
-## Available Scripts
+## Clone the repo
 
-In the project directory, you can run:
+- In your CLI, cd into the desired folder, then run: 
+```
+https://github.com/AndrewDurrant/Airin_Leaderboard_Challenge.git
+```
+You should see something like this:
 
-### `npm start`
+```
+Cloning into 'Airin_Leaderboard_Challenge'...
+remote: Enumerating objects: 322, done.
+remote: Counting objects: 100% (322/322), done.
+remote: Compressing objects: 100% (225/225), done.
+remote: Total 26681 (delta 164), reused 194 (delta 85), pack-reused 26359
+Receiving objects: 100% (26681/26681), 97.42 MiB | 18.50 MiB/s, done.
+Resolving deltas: 100% (10880/10880), done.
+...
+```
+## Install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- CD into the repo you just cloned and run the following command:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+# or
+yarn install
+```
 
-### `npm test`
+This will install all the required dependencies to make the project run.
+You should see something like this:
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+...added 1660 packages from 713 contributors and audited 1669 packages in 39.11s
 
-### `npm run build`
+68 packages are looking for funding
+  run `npm fund` for details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+found 4 vulnerabilities (3 low, 1 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run Application
+```
+npm start
+```
+This will open a window in your default browser at:
+http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Test application
+```
+npm test
+```
+All tests should be passing
 
-### `npm run eject`
+## Links
+- Figma wire frame: 
+https://www.figma.com/file/ZUcDgnrLUutlJAeS0d6K9Z/Airin-Leaderboard-Wireframe?node-id=0%3A1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Live App:
+https://andrewdurrant.github.io/Airin_Leaderboard_Challenge/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Explanation of Tech Utilized
+- Frontend
+  * React
+  * CSS Grid
+  * CSS Flexbox
+- Testing
+  * Jest
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I kept this app pretty simple and did not bring in some of my favorite JS and CSS tools: Sass and React Bootstrap. They felt like overkill for this challenge.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I went with the React framework since this is the JavaScript framework I am most familiar with.
 
-## Learn More
+I utilized Grid and Flexbox for a modern CSS design layout.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is a *MOBILE-FIRST* design (built using iPhone X screen size)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screen Shots:
+![Mobile1](images/mobile1.png)<br />
+![Mobile2](images/mobile2.png)<br /> 
+![tablet](images/tablet.png)<br /> 
+![desktop](images/desktop.png)<br /> 
