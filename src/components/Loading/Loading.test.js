@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Loading from './Loading';
 
 
-describe('<App />', () => {
+describe('<Loading />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-    <App/>
+    <Loading/>
     , div);
     ReactDOM.unmountComponentAtNode(div);
   });

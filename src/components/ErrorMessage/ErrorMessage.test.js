@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ErrorMessage from './ErrorMessage';
 
 
-describe('<App />', () => {
+describe('<ErrorMessage />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-    <App/>
+    <ErrorMessage/>
     , div);
     ReactDOM.unmountComponentAtNode(div);
   });
