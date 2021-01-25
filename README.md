@@ -64,6 +64,9 @@ https://www.figma.com/file/ZUcDgnrLUutlJAeS0d6K9Z/Airin-Leaderboard-Wireframe?no
 - Live App:
 https://andrewdurrant.github.io/Airin_Leaderboard_Challenge/
 
+- Github Repo:
+https://github.com/AndrewDurrant/Airin_Leaderboard_Challenge
+
 ## Explanation of Tech Utilized
 - Frontend
   * React
