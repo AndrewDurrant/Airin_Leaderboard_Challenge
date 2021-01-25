@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.170aab0e.chunk.css",
-    "main.js": "/static/js/main.46adf06a.chunk.js",
-    "main.js.map": "/static/js/main.46adf06a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ac9db64b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ac9db64b.js.map",
-    "static/js/2.64fedea3.chunk.js": "/static/js/2.64fedea3.chunk.js",
-    "static/js/2.64fedea3.chunk.js.map": "/static/js/2.64fedea3.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.170aab0e.chunk.css.map": "/static/css/main.170aab0e.chunk.css.map",
-    "static/js/2.64fedea3.chunk.js.LICENSE.txt": "/static/js/2.64fedea3.chunk.js.LICENSE.txt"
+    "main.css": "/Airin_Leaderboard_Challenge/static/css/main.170aab0e.chunk.css",
+    "main.js": "/Airin_Leaderboard_Challenge/static/js/main.46adf06a.chunk.js",
+    "main.js.map": "/Airin_Leaderboard_Challenge/static/js/main.46adf06a.chunk.js.map",
+    "runtime-main.js": "/Airin_Leaderboard_Challenge/static/js/runtime-main.ac74e2c6.js",
+    "runtime-main.js.map": "/Airin_Leaderboard_Challenge/static/js/runtime-main.ac74e2c6.js.map",
+    "static/js/2.64fedea3.chunk.js": "/Airin_Leaderboard_Challenge/static/js/2.64fedea3.chunk.js",
+    "static/js/2.64fedea3.chunk.js.map": "/Airin_Leaderboard_Challenge/static/js/2.64fedea3.chunk.js.map",
+    "index.html": "/Airin_Leaderboard_Challenge/index.html",
+    "static/css/main.170aab0e.chunk.css.map": "/Airin_Leaderboard_Challenge/static/css/main.170aab0e.chunk.css.map",
+    "static/js/2.64fedea3.chunk.js.LICENSE.txt": "/Airin_Leaderboard_Challenge/static/js/2.64fedea3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac9db64b.js",
+    "static/js/runtime-main.ac74e2c6.js",
     "static/js/2.64fedea3.chunk.js",
     "static/css/main.170aab0e.chunk.css",
     "static/js/main.46adf06a.chunk.js"
