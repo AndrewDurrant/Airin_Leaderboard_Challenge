@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useSort from '../../hooks/useSort';
 import LeaderBoardApiService from '../../services/leader-board-api-service';
 import Player from '../Player/Player';
 import Loading from '../Loading/Loading';
@@ -38,6 +39,8 @@ function App() {
   useEffect(() => {
     getPageData()
   }, [])
+
+  useSort(state.players, state.view);
 
 
   return (
